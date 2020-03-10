@@ -14,22 +14,20 @@ const JobSearch: React.FC<Props> = ({ getJobs }) => {
   const [formValues, setFormValues] = useState<FormValues>({
     location: "",
     jobDescription: "",
-    fulltime: ""
+    fulltime: "",
   });
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.persist();
-    setFormValues(prevState => ({
+    setFormValues((prevState) => ({
       ...prevState,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const { location, jobDescription, fulltime } = formValues;
-    console.log(location, jobDescription, fulltime);
-
     getJobs(location, jobDescription, fulltime);
   };
 
@@ -41,6 +39,7 @@ const JobSearch: React.FC<Props> = ({ getJobs }) => {
         onChange={handleOnChange}
         value={formValues.location}
         placeholder="Location"
+        data-testid="locationInput"
       />
       <input
         name="jobDescription"
@@ -48,15 +47,17 @@ const JobSearch: React.FC<Props> = ({ getJobs }) => {
         value={formValues.jobDescription}
         onChange={handleOnChange}
         placeholder="Job Description"
+        data-testid="descriptionInput"
       />
       <input
         name="fulltime"
         type="checkbox"
+        data-testid="checkboxInput"
         value={formValues.fulltime}
         onChange={handleOnChange}
       />
       <label htmlFor="full-time">Full Time?</label>
-      <button type="submit" className="submit-btn">
+      <button type="submit" className="submit-btn" data-testid="submitBtn">
         Search
       </button>
     </form>

@@ -8,13 +8,11 @@ import { Job, MappedJob } from "../utils/types";
 
 const GithubJobs: React.FC = () => {
   const [jobs, setJobs] = useState<Job[]>([]);
-  const [errorMsg, setErrorMsg] = useState<string>("");
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [errorMsg, setErrorMsg] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [likedJobs, setLikedJobs] = useState<MappedJob[]>(
     JSON.parse(window.localStorage.getItem("likes")!) || []
   );
-
-  // const showInfo = (id: string) => {}
 
   const handleGetJobs = async (
     location: string,

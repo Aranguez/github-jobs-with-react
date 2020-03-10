@@ -1,8 +1,8 @@
 import React from "react";
-import { MappedJob } from "../utils/types";
-import JobBox from "./JobBox";
+import { MappedJob } from "../../utils/types";
+import JobBox from "../JobBox";
 
-type Props = {
+export type Props = {
   items: MappedJob[];
   setLikedJobs: React.Dispatch<React.SetStateAction<MappedJob[]>>;
 };

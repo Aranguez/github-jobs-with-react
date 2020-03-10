@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { MappedJob } from "../utils/types";
+import { MappedJob } from "../../utils/types";
 
-type Props = {
+export type Props = {
   item: MappedJob;
   setLikedJobs: React.Dispatch<React.SetStateAction<MappedJob[]>>;
   isLiked: boolean;
@@ -46,6 +46,7 @@ const JobBox: React.FC<Props> = ({ item, setLikedJobs, isLiked }) => {
         <i
           className={`fa ${iconClass}`}
           id={`${id}-liked`}
+          data-testid="likeBtn"
           onClick={toggleLike}
         ></i>
       </div>
