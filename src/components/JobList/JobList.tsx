@@ -1,6 +1,6 @@
 import React from "react";
-import { MappedJob } from "../utils/types";
-import JobBox from "./JobBox";
+import { MappedJob } from "../../utils/types";
+import JobBox from "../JobBox/JobBox";
 
 type Props = {
   items: MappedJob[];

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MappedJob } from "../utils/types";
+import { MappedJob } from "../../utils/types";
 
 type Props = {
   item: MappedJob;

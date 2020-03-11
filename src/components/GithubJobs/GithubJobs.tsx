@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-import API from "../core/jobs-api";
+import API from "../../core/jobs-api";
 
-import JobSearch from "./JobSearch";
-import JobsList from "./JobList";
-import { Job, MappedJob } from "../utils/types";
+import JobSearch from "../JobSearch/JobSearch";
+import JobsList from "../JobList/JobList";
+import { Job, MappedJob } from '../../utils/types';
 
 const GithubJobs: React.FC = () => {
   const [jobs, setJobs] = useState<Job[]>([]);
