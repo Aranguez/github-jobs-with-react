@@ -1,0 +1,40 @@
+.modal {
+  padding: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 3px;
+  display: none;
+
+  &__title {
+    font-size: 1.5rem;
+  }
+
+  &.open {
+    display: block;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+
+    .confirm-btn {
+      background-color: blueviolet;
+      color: white;
+      transition: all .3 ease;
+
+      &::hover {
+        background-color: rgba($color:blueviolet, $alpha: .6);
+      }
+    }
+
+    .cancel-btn {
+      background-color: white;
+      color: #666;
+      border-radius: 1px solid #ccc;
+      transition: all .3 ease;
+    }
+  }
+}
